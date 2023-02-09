@@ -4,7 +4,8 @@ import {useAppDispatch, useAppSelector} from './store/hooks';
 import {Modes, setMode} from './store/reducers/globalReducer';
 import {ReducerNames} from './store/reducers/reducerNames';
 import {Page, PageContent} from "./layout";
-import {AnchorDays, LeapYears, ModuloEasy, ModuloHard, Weekdays} from "./modes";
+import {AnchorDays, Doomsdays, LeapYears, ModuloEasy, ModuloHard, Weekdays} from "./modes";
+import {unreachableCode} from "./utilities/unreachableCode";
 
 export const App = () => {
   const {mode} = useAppSelector((state) => state[ReducerNames.GLOBAL]);
@@ -59,11 +60,15 @@ export const App = () => {
           </PageContent>
         </Page>
       );
-    default:
+    case Modes.DOOMSDAYS:
       return (
         <Page changeMode={changeMode}>
-          <p>Not yet implemented</p>
+          <PageContent title="Doomsdays">
+            <Doomsdays />
+          </PageContent>
         </Page>
       );
+    default:
+      throw unreachableCode(mode);
   }
 };

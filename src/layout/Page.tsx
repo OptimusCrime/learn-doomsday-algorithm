@@ -23,6 +23,7 @@ export const Page = ({ children, changeMode} : {children: React.ReactNode; chang
         <MenuLink changeMode={changeMode} mode={Modes.MODULO_EASY}>Modulo (easy)</MenuLink>
         <MenuLink changeMode={changeMode} mode={Modes.MODULO_HARD}>Modulo (hard)</MenuLink>
         <MenuLink changeMode={changeMode} mode={Modes.LEAP_YEARS}>Leap years</MenuLink>
+        <MenuLink changeMode={changeMode} mode={Modes.DOOMSDAYS}>Doomsdays</MenuLink>
       </nav>
       <div>
         {children}

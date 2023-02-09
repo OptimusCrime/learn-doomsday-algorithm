@@ -9,6 +9,7 @@ export enum Modes {
   MODULO_EASY = 'modulo_easy',
   MODULO_HARD = 'modulo_hard',
   LEAP_YEARS = 'leap_years',
+  DOOMSDAYS = 'doomsdays',
 }
 
 interface GlobalState {
