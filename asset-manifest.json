@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/doomsday-algorithm-trainer/static/css/main.d9653391.css",
+    "main.js": "/doomsday-algorithm-trainer/static/js/main.17e4f79c.js",
+    "index.html": "/doomsday-algorithm-trainer/index.html",
+    "main.d9653391.css.map": "/doomsday-algorithm-trainer/static/css/main.d9653391.css.map",
+    "main.17e4f79c.js.map": "/doomsday-algorithm-trainer/static/js/main.17e4f79c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d9653391.css",
+    "static/js/main.17e4f79c.js"
+  ]
+}
