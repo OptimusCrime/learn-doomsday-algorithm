@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 
-import {generateRandomNumberInclusive} from "../utilities/random";
+import { generateRandomNumberInclusive } from '../utilities/random';
 
 interface StateProps {
   showAnswer: boolean;
@@ -14,7 +14,7 @@ export const ModuloHard = () => {
   const [state, setState] = useState<StateProps>({
     showAnswer: false,
     guessed: null,
-    currentNumber: newRandomNumber()
+    currentNumber: newRandomNumber(),
   });
 
   const remainderCorrectAnswer = state.currentNumber % 12;
@@ -23,9 +23,9 @@ export const ModuloHard = () => {
     setState({
       showAnswer: false,
       guessed: null,
-      currentNumber: newRandomNumber()
+      currentNumber: newRandomNumber(),
     });
-  }
+  };
 
   const guess = (value: number) => {
     if (state.showAnswer) {
@@ -37,7 +37,7 @@ export const ModuloHard = () => {
       showAnswer: true,
       guessed: value,
     }));
-  }
+  };
 
   const remainderButtons = Array(12).fill(0);
 
@@ -48,7 +48,16 @@ export const ModuloHard = () => {
       </div>
       <div className="flex flex-row justify-center mt-10 space-x-10">
         {remainderButtons.map((_, index) => (
-          <button className={`border p-2 rounded ${(state.showAnswer && index === state.guessed) ? (state.guessed === remainderCorrectAnswer ? 'bg-green-400' : 'bg-red-400') : ''}`} onClick={() => guess(index)}>
+          <button
+            className={`border p-2 rounded ${
+              state.showAnswer && index === state.guessed
+                ? state.guessed === remainderCorrectAnswer
+                  ? 'bg-green-400'
+                  : 'bg-red-400'
+                : ''
+            }`}
+            onClick={() => guess(index)}
+          >
             {index}
           </button>
         ))}
@@ -60,4 +69,4 @@ export const ModuloHard = () => {
       )}
     </div>
   );
-}
+};

@@ -1,7 +1,7 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 
-import {generateRandomNumberInclusive} from "../utilities/random";
-import {weekdayNumberToString} from "../utilities/weekdayNumberToString";
+import { generateRandomNumberInclusive } from '../utilities/random';
+import { weekdayNumberToString } from '../utilities/weekdayNumberToString';
 
 interface StateProps {
   showAnswer: boolean;
@@ -15,16 +15,16 @@ export const Weekdays = () => {
   const [state, setState] = useState<StateProps>({
     showAnswer: false,
     guessed: null,
-    currentWeekday: newRandomDay()
+    currentWeekday: newRandomDay(),
   });
 
   const reset = () => {
     setState({
       showAnswer: false,
       guessed: null,
-      currentWeekday: newRandomDay()
+      currentWeekday: newRandomDay(),
     });
-  }
+  };
 
   const guess = (value: number) => {
     if (state.showAnswer) {
@@ -34,9 +34,9 @@ export const Weekdays = () => {
     setState((prevState) => ({
       ...prevState,
       showAnswer: true,
-      guessed: value
+      guessed: value,
     }));
-  }
+  };
 
   const buttons = Array(7).fill(0);
 
@@ -47,7 +47,16 @@ export const Weekdays = () => {
       </div>
       <div className="flex flex-row justify-center mt-10 space-x-10">
         {buttons.map((_, index) => (
-          <button className={`border p-2 rounded ${(state.showAnswer && index === state.guessed) ? (state.guessed === state.currentWeekday ? 'bg-green-400' : 'bg-red-400') : ''}`} onClick={() => guess(index)}>
+          <button
+            className={`border p-2 rounded ${
+              state.showAnswer && index === state.guessed
+                ? state.guessed === state.currentWeekday
+                  ? 'bg-green-400'
+                  : 'bg-red-400'
+                : ''
+            }`}
+            onClick={() => guess(index)}
+          >
             {index}
           </button>
         ))}
@@ -59,4 +68,4 @@ export const Weekdays = () => {
       )}
     </div>
   );
-}
+};

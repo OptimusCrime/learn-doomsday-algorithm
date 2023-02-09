@@ -1,10 +1,10 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 
-import {generateRandomNumberInclusive} from "../utilities/random";
+import { generateRandomNumberInclusive } from '../utilities/random';
 
 enum Steps {
   FIT = 'fit',
-  REMAINDER = 'reminder'
+  REMAINDER = 'reminder',
 }
 
 interface StateProps {
@@ -21,7 +21,7 @@ export const ModuloEasy = () => {
     step: Steps.FIT,
     guessedFit: null,
     guessedRemainder: null,
-    currentNumber: newRandomNumber()
+    currentNumber: newRandomNumber(),
   });
 
   const fitCorrectAnswer = Math.floor(state.currentNumber / 12);
@@ -32,9 +32,9 @@ export const ModuloEasy = () => {
       step: Steps.FIT,
       guessedFit: null,
       guessedRemainder: null,
-      currentNumber: newRandomNumber()
+      currentNumber: newRandomNumber(),
     });
-  }
+  };
 
   const guessFit = (value: number) => {
     // No cheating
@@ -45,9 +45,9 @@ export const ModuloEasy = () => {
     setState((prevState) => ({
       ...prevState,
       step: Steps.REMAINDER,
-      guessedFit: value
+      guessedFit: value,
     }));
-  }
+  };
 
   const guessRemainder = (value: number) => {
     if (state.guessedRemainder !== null) {
@@ -57,9 +57,9 @@ export const ModuloEasy = () => {
     setState((prevState) => ({
       ...prevState,
       state: Steps.REMAINDER,
-      guessedRemainder: value
+      guessedRemainder: value,
     }));
-  }
+  };
 
   const fitButtons = Array(9).fill(0);
   const remainderButtons = Array(12).fill(0);
@@ -71,19 +71,37 @@ export const ModuloEasy = () => {
       </div>
       <div className="flex flex-row justify-center mt-10 space-x-10">
         {fitButtons.map((_, index) => (
-          <button className={`border p-2 rounded ${(state.guessedFit !== null && index === state.guessedFit) ? (state.guessedFit === fitCorrectAnswer ? 'bg-green-400' : 'bg-red-400') : ''}`} onClick={() => guessFit(index)}>
+          <button
+            className={`border p-2 rounded ${
+              state.guessedFit !== null && index === state.guessedFit
+                ? state.guessedFit === fitCorrectAnswer
+                  ? 'bg-green-400'
+                  : 'bg-red-400'
+                : ''
+            }`}
+            onClick={() => guessFit(index)}
+          >
             {index}
           </button>
         ))}
       </div>
       {state.step === Steps.REMAINDER && (
         <>
-        <div className="mt-10">
-          <p className="font-bold">What is the remainder?</p>
-        </div>
+          <div className="mt-10">
+            <p className="font-bold">What is the remainder?</p>
+          </div>
           <div className="flex flex-row justify-center mt-10 space-x-10">
             {remainderButtons.map((_, index) => (
-              <button className={`border p-2 rounded ${(state.guessedRemainder !== null && index === state.guessedRemainder) ? (state.guessedRemainder === remainderCorrectAnswer ? 'bg-green-400' : 'bg-red-400') : ''}`} onClick={() => guessRemainder(index)}>
+              <button
+                className={`border p-2 rounded ${
+                  state.guessedRemainder !== null && index === state.guessedRemainder
+                    ? state.guessedRemainder === remainderCorrectAnswer
+                      ? 'bg-green-400'
+                      : 'bg-red-400'
+                    : ''
+                }`}
+                onClick={() => guessRemainder(index)}
+              >
                 {index}
               </button>
             ))}
@@ -97,4 +115,4 @@ export const ModuloEasy = () => {
       )}
     </div>
   );
-}
+};

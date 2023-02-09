@@ -1,14 +1,14 @@
 import React from 'react';
 
-import {useAppDispatch, useAppSelector} from './store/hooks';
-import {Modes, setMode} from './store/reducers/globalReducer';
-import {ReducerNames} from './store/reducers/reducerNames';
-import {Page, PageContent} from "./layout";
-import {AnchorDays, Doomsdays, LeapYears, ModuloEasy, ModuloHard, Weekdays} from "./modes";
-import {unreachableCode} from "./utilities/unreachableCode";
+import { Page, PageContent } from './layout';
+import { AnchorDays, Doomsdays, LeapYears, ModuloEasy, ModuloHard, Weekdays } from './modes';
+import { useAppDispatch, useAppSelector } from './store/hooks';
+import { Modes, setMode } from './store/reducers/globalReducer';
+import { ReducerNames } from './store/reducers/reducerNames';
+import { unreachableCode } from './utilities/unreachableCode';
 
 export const App = () => {
-  const {mode} = useAppSelector((state) => state[ReducerNames.GLOBAL]);
+  const { mode } = useAppSelector((state) => state[ReducerNames.GLOBAL]);
   const dispatch = useAppDispatch();
 
   const changeMode = (mode: Modes) => dispatch(setMode(mode));

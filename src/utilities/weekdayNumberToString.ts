@@ -17,4 +17,4 @@ export const weekdayNumberToString = (value: number): string => {
     default:
       return '<invalid date>';
   }
-}
+};
