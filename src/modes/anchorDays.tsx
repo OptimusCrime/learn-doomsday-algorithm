@@ -56,6 +56,10 @@ export const AnchorDays = () => {
     });
   }
   const guess = (value: number) => {
+    if (state.showAnswer) {
+      return reset();
+    }
+
     setState((prevState) => ({
       ...prevState,
       showAnswer: true,
