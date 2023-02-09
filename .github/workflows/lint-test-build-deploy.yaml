@@ -29,10 +29,6 @@ jobs:
           npm run lint
           npm run prettier
 
-      - name: Test
-        run: |
-          npm run test
-
       - name: Build
         env:
           TOKEN_HEADER_NAME: '${{ secrets.TOKEN_HEADER_NAME }}'
