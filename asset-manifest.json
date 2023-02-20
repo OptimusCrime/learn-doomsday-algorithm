@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/doomsday-algorithm-trainer/static/css/main.d9653391.css",
-    "main.js": "/doomsday-algorithm-trainer/static/js/main.17e4f79c.js",
+    "main.css": "/doomsday-algorithm-trainer/static/css/main.7ee659e6.css",
+    "main.js": "/doomsday-algorithm-trainer/static/js/main.de7164a8.js",
     "index.html": "/doomsday-algorithm-trainer/index.html",
-    "main.d9653391.css.map": "/doomsday-algorithm-trainer/static/css/main.d9653391.css.map",
-    "main.17e4f79c.js.map": "/doomsday-algorithm-trainer/static/js/main.17e4f79c.js.map"
+    "main.7ee659e6.css.map": "/doomsday-algorithm-trainer/static/css/main.7ee659e6.css.map",
+    "main.de7164a8.js.map": "/doomsday-algorithm-trainer/static/js/main.de7164a8.js.map"
   },
   "entrypoints": [
-    "static/css/main.d9653391.css",
-    "static/js/main.17e4f79c.js"
+    "static/css/main.7ee659e6.css",
+    "static/js/main.de7164a8.js"
   ]
 }
