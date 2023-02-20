@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Page, PageContent } from './layout';
-import { AnchorDays, Doomsdays, LeapYears, ModuloEasy, ModuloHard, Weekdays } from './modes';
+import { AnchorDays, Calculate, Doomsdays, LeapYears } from './modes';
 import { useAppDispatch, useAppSelector } from './store/hooks';
 import { Modes, setMode } from './store/reducers/globalReducer';
 import { ReducerNames } from './store/reducers/reducerNames';
@@ -15,9 +15,12 @@ export const App = () => {
 
   switch (mode) {
     case Modes.NONE:
+    case Modes.CALCULATE:
       return (
         <Page changeMode={changeMode}>
-          <p>This is the frontpage</p>
+          <PageContent title="Calculate">
+            <Calculate />
+          </PageContent>
         </Page>
       );
     case Modes.ANCHOR_DAYS:
@@ -25,30 +28,6 @@ export const App = () => {
         <Page changeMode={changeMode}>
           <PageContent title="Anchor days">
             <AnchorDays />
-          </PageContent>
-        </Page>
-      );
-    case Modes.WEEKDAYS:
-      return (
-        <Page changeMode={changeMode}>
-          <PageContent title="Weekdays">
-            <Weekdays />
-          </PageContent>
-        </Page>
-      );
-    case Modes.MODULO_EASY:
-      return (
-        <Page changeMode={changeMode}>
-          <PageContent title="Modulo (easy)">
-            <ModuloEasy />
-          </PageContent>
-        </Page>
-      );
-    case Modes.MODULO_HARD:
-      return (
-        <Page changeMode={changeMode}>
-          <PageContent title="Modulo (hard)">
-            <ModuloHard />
           </PageContent>
         </Page>
       );

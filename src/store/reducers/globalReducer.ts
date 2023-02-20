@@ -5,11 +5,9 @@ import { ReducerNames } from './reducerNames';
 export enum Modes {
   NONE = 'none',
   ANCHOR_DAYS = 'anchor_days',
-  WEEKDAYS = 'weekdays',
-  MODULO_EASY = 'modulo_easy',
-  MODULO_HARD = 'modulo_hard',
   LEAP_YEARS = 'leap_years',
   DOOMSDAYS = 'doomsdays',
+  CALCULATE = 'calculate',
 }
 
 interface GlobalState {
@@ -17,7 +15,7 @@ interface GlobalState {
 }
 
 const initialState: GlobalState = {
-  mode: Modes.ANCHOR_DAYS,
+  mode: Modes.NONE,
 };
 
 const globalReducer = createSlice({

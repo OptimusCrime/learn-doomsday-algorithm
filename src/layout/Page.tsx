@@ -26,17 +26,11 @@ export const Page = ({ children, changeMode }: { children: React.ReactNode; chan
   return (
     <div className="mx-auto mb-128 max-w-7xl px-12 text-center text-text-dark mt-10">
       <nav className="flex flex-row text-center justify-around">
+        <MenuLink changeMode={changeMode} mode={Modes.CALCULATE}>
+          Calculate
+        </MenuLink>
         <MenuLink changeMode={changeMode} mode={Modes.ANCHOR_DAYS}>
           Anchor days
-        </MenuLink>
-        <MenuLink changeMode={changeMode} mode={Modes.WEEKDAYS}>
-          Weekdays
-        </MenuLink>
-        <MenuLink changeMode={changeMode} mode={Modes.MODULO_EASY}>
-          Modulo (easy)
-        </MenuLink>
-        <MenuLink changeMode={changeMode} mode={Modes.MODULO_HARD}>
-          Modulo (hard)
         </MenuLink>
         <MenuLink changeMode={changeMode} mode={Modes.LEAP_YEARS}>
           Leap years
