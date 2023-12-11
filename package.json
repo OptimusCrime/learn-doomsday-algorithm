@@ -1,7 +1,7 @@
 {
-  "name": "doomsday-algorithm-trainer",
+  "name": "learn-doomsday-algorithm",
   "version": "1.0.0",
-  "homepage": "/doomsday-algorithm-trainer",
+  "homepage": "/learn-doomsday-algorithm",
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.0",
     "@testing-library/jest-dom": "^5.16.5",
